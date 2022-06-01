@@ -1,0 +1,274 @@
+{
+    "products": [
+    {
+    "id": 1,
+    "name": "新一代Dyson Digital Slim Fluffy 輕量無線吸塵器 (銀灰色)",
+    "imgUrl": "https://dysonshop.blob.core.windows.net/products/dyson-digital-slim-fluffy-nickel/help-me-choose-265x265.jpg",
+    "description": "具有五層先進過濾系統。 無衰減電力，省電開關。 以及LCD螢幕即時報告，讓你輕易掌控清潔任務。",
+    "price": "13999",
+    "favorite": false,
+    "count": 0
+    },
+    {
+    "id": 2,
+    "name": "Dyson V12 Detect Slim™ Absolute Extra 無線吸塵器",
+    "imgUrl": "https://dysonshop.blob.core.windows.net/products/dyson-v12-detect-slim™-absolute-extra/help-me-choose-265x265.jpg",
+    "description": "Dyson強勁輕量智能無線吸塵器。智慧雷射偵測科技使隱藏的塵垢無所遁形，根據環境自動調整吸力深層潔淨的科學數據證明。",
+    "price": "23900",
+    "favorite": false,
+    "count": 0
+    },
+    {
+    "id": 3,
+    "name": "Dyson V8™ Slim Fluffy無線吸塵器",
+    "imgUrl": "https://dysonshop.blob.core.windows.net/products/dyson-v8™-slim-fluffy/help-me-choose-265x265.jpg",
+    "description": "輕量無線，吸力同樣強勁。全新輕量軟質碳纖維滾筒吸頭40%更小、更輕。",
+    "price": "11900",
+    "favorite": false,
+    "count": 0
+    },
+    {
+    "id": 4,
+    "name": "Dyson V8™ Fluffy+ 無線吸塵器",
+    "imgUrl": "https://dysonshop.blob.core.windows.net/products/dyson-v8™-slim-fluffy/help-me-choose-265x265.jpg",
+    "description": "無線輕巧，無線強勁戴森強勁吸力無線吸塵器。40分鐘強勁吸力，專為清潔硬質地板而設計。",
+    "price": "9999",
+    "favorite": false,
+    "count": 0
+    },
+    {
+    "id": 5,
+    "name": "Dyson V15 Detect™ Absolute Extra 無線吸塵器",
+    "imgUrl": "https://dysonshop.blob.core.windows.net/products/dyson-v15-detect™-absolute-extra/help-me-choose-265x265.jpg",
+    "description": "Dyson V15 Detect™吸塵器均使用雷射光來顯現隱藏微塵，計算塵粒數量並測量其大小，在螢幕上顯示清潔時所吸除的東西。限定金色Dyson V15 Detect™ Absolute吸塵器也採用有史以來最棒的無線過濾系統，結合HEPA科技。",
+    "price": "27900",
+    "favorite": false,
+    "count": 0
+    },
+    {
+    "id": 6,
+    "name": "Dyson V15 Detect™ Total Clean無線吸塵器",
+    "imgUrl": "https://dysonshop.blob.core.windows.net/products/dyson-v15-detect™-total-clean/help-me-choose-265x265.jpg",
+    "description": "Dyson V15 Detect™吸塵器均使用雷射光來顯現隱藏微塵，計算塵粒數量並測量其大小，在螢幕上顯示清潔時所吸除的東西。",
+    "price": "26900",
+    "favorite": false,
+    "count": 0
+    },
+    {
+    "id": 7,
+    "name": "Dyson V15 Detect™ Fluffy 無線吸塵器",
+    "imgUrl": "https://dysonshop.blob.core.windows.net/products/dyson-v15-detect™-fluffy/help-me-choose-265x265.jpg",
+    "description": "Dyson V15 Detect™吸塵器均使用雷射光來顯現隱藏微塵，計算塵粒數量並測量其大小，在螢幕上顯示清潔時所吸除的東西。",
+    "price": "20900",
+    "favorite": false,
+    "count": 0
+    },
+    {
+    "id": 8,
+    "name": "Dyson V12 Detect Slim™ Total Clean無線吸塵器",
+    "imgUrl": "https://dysonshop.blob.core.windows.net/products/dyson-v12-detect-slim™-total-clean/help-me-choose-265x265.jpg",
+    "description": "Dyson強勁輕量智能無線吸塵器。智慧雷射偵測科技使隱藏的塵垢無所遁形。根據環境，自動調整吸力深層潔淨的科學數據證明。",
+    "price": "23900",
+    "favorite": false,
+    "count": 0
+    },
+    {
+    "id": 9,
+    "name": "Dyson V12 Detect Slim™ Fluffy 無線吸塵器",
+    "imgUrl": "https://dysonshop.blob.core.windows.net/products/dyson-v12-detect-slim™-fluffy/help-me-choose-265x265.jpg",
+    "description": "Dyson強勁輕量智能無線吸塵器。智慧雷射偵測科技使隱藏的塵垢無所遁形。根據環境，自動調整吸力。深層潔淨的科學數據證明",
+    "price": "21900",
+    "favorite": false,
+    "count": 0
+    },
+    {
+    "id": 10,
+    "name": "Dyson Micro 1.5kg™吸塵器 (金色)",
+    "imgUrl": "https://dysonshop.blob.core.windows.net/products/dyson-micro-1.5kg™-vacuum/help-me-choose-265x265.jpg",
+    "description": "1.5公斤輕巧型。捕捉99.99%的微粒。吸力不減。",
+    "price": "15900",
+    "favorite": false,
+    "count": 0
+    },
+    {
+    "id": 11,
+    "name": "Dyson Omni-glide™+ 多向吸塵器",
+    "imgUrl": "https://dysonshop.blob.core.windows.net/products/dyson-omni-glide™%2B-vacuum/help-me-choose-265x265.jpg",
+    "description": "體驗嶄新硬質地板清潔方式，Dyson第一個多向軟質碳纖維滾筒吸頭。Dyson最容易操控的吸塵器。",
+    "price": "16900",
+    "favorite": false,
+    "count": 0
+    },
+    {
+    "id": 12,
+    "name": "Dyson Digital Slim Fluffy Extra 輕量無線吸塵器",
+    "imgUrl": "https://dysonshop.blob.core.windows.net/products/dyson-digital-slim-fluffy-extra/help-me-choose-265x265.jpg",
+    "description": "輕而強勁。重量減輕30%，強勁吸力能清潔任何地方。具有五層先進過濾系統。 無衰減電力，省電開關。 以及LCD螢幕即時報告，讓你輕易掌控清潔任務。",
+    "price": "22900",
+    "favorite": false,
+    "count": 0
+    },
+    {
+    "id": 13,
+    "name": "Dyson V11™ Fluffy Extra無線吸塵器",
+    "imgUrl": "https://dysonshop.blob.core.windows.net/products/dyson-re-engineered-v11-fluffy/help-me-choose-265x265.jpg",
+    "description": "配備Dyson Hyperdymium™馬達，吸力強勁。LCD螢幕即時報告。可更換電池設計適合更長時間清潔。適用於硬質地板，配備軟質碳纖維滾筒吸頭。",
+    "price": "26900",
+    "favorite": false,
+    "count": 0
+    },
+    {
+    "id": 14,
+    "name": "Dyson V10 Fluffy Extra 無線吸塵器",
+    "imgUrl": "https://dysonshop.blob.core.windows.net/products/dyson-v10™-fluffy-extra-vacuum/help-me-choose-265x265.jpg",
+    "description": "吸力不減，深層潔淨您的家。Dyson 強勁無線吸塵器，可有效吸除99.97％小至0.3微米的微塵。",
+    "price": "22900",
+    "favorite": false,
+    "count": 0
+    },
+    {
+    "id": 15,
+    "name": "Dyson Cyclone V10™ Fluffy 無線吸塵器",
+    "imgUrl": "https://dysonshop.blob.core.windows.net/products/dyson-cyclone-v10™-fluffy-vacuum/help-me-choose-265x265.jpg",
+    "description": "吸力不減，深層潔淨您的家。Dyson 強勁無線吸塵器，可有效吸除99.97％小至0.3微米的微塵。",
+    "price": "22900",
+    "favorite": false,
+    "count": 0
+    },
+    {
+    "id": 16,
+    "name": "Dyson Pure Hot+Cool 三合一涼暖空氣清淨機HP00 (銀白色)",
+    "imgUrl": "https://dysonshop.blob.core.windows.net/products/hp00-dyson-pure-hot%2Bcool-white/silver-tw/help-me-choose-265x265.jpg",
+    "description": "淨化、暖風、涼風三合一。淨化有害氣體以及99.95%空氣中的污染物及過敏原多三倍活性碳以捕捉有害微粒",
+    "price": "15888",
+    "favorite": false,
+    "count": 0
+    },
+    {
+    "id": 17,
+    "name": "Dyson Pure Cool Me™ 個人空氣清淨風扇 (銀白色)",
+    "imgUrl": "https://dysonshop.blob.core.windows.net/products/dyson-pure-cool-me™-personal-purifier-fan-silver-white/help-me-choose-265x265.jpg",
+    "description": "用清淨空氣讓您涼爽，HEPA濾網捕捉99.95%小如細菌與病毒的微粒。",
+    "price": "9999",
+    "favorite": false,
+    "count": 0
+    },
+    {
+    "id": 18,
+    "name": "Dyson Purifier Hot+Cool™ Formaldehyde 三合一甲醛偵測涼暖空氣清淨機 HP09 (白金色)",
+    "imgUrl": "https://dysonshop.blob.core.windows.net/products/dyson-purifier-hot%2Bcool-formaldehyde-purifying-fan-heater-(white---gold)/help-me-choose-265x265.jpg",
+    "description": "過濾H1N1病毒。偵測及持續消滅甲醛，濾除H1N1、H3N2、EV71病毒90及99.95%超細微粒。",
+    "price": "26900",
+    "favorite": false,
+    "count": 0
+    },
+    {
+    "id": 19,
+    "name": "Dyson Purifier Cool™ Formaldehyde 二合一甲醛偵測空氣清淨機 TP09 (白金色)",
+    "imgUrl": "https://dysonshop.blob.core.windows.net/products/dyson-purifier-cool-formaldehyde-purifying-fan-(white---gold)/help-me-choose-265x265.jpg",
+    "description": "過濾H1N1病毒。偵測及持續消滅甲醛，濾除H1N1、H3N2、EV71病毒90及99.95%超細微粒",
+    "price": "25900",
+    "favorite": false,
+    "count": 0
+    },
+    {
+    "id": 20,
+    "name": "Dyson Purifier Cool Autoreact™ 二合一涼風空氣清淨機 TP7A (鎳白色)",
+    "imgUrl": "https://dysonshop.blob.core.windows.net/products/dyson-purifier-cool-autoreact-purifying-fan-white-nickel/help-me-choose-265x265.jpg",
+    "description": "捕捉細菌、H1N1、H3N2、EV71病毒90與過敏原。可淨化99.95%小至PM0.1的污染物。",
+    "price": "14900",
+    "favorite": false,
+    "count": 0
+    },
+    {
+    "id": 21,
+    "name": "Dyson Pure Cool™ 二合一涼風空氣清淨機 TP00 (銀白色)",
+    "imgUrl": "https://dysonshop.blob.core.windows.net/products/dyson-pure-cool-white-silver-(tp00)/help-me-choose-265x265.jpg",
+    "description": "無懼PM2.5 淨化 99.95％ 小至 PM0.1 的有害細懸浮微粒，同時 Air Multiplier™ 氣流倍增技術，有效循環室內空氣多三倍活性碳以捕捉有害微粒。",
+    "price": "13900",
+    "favorite": false,
+    "count": 0
+    },
+    {
+    "id": 22,
+    "name": "Dyson Purifier Cool™ Formaldehyde 二合一甲醛偵測空氣清淨機 TP09 (鎳金色)",
+    "imgUrl": "https://dysonshop.blob.core.windows.net/products/dyson-purifier-cool-formaldehyde-purifying-fan-(nickel---gold)/help-me-choose-265x265.jpg",
+    "description": "偵測及持續消滅甲醛，濾除H1N1、H3N2、EV71病毒90及99.95%超細微粒。",
+    "price": "22900",
+    "favorite": false,
+    "count": 0
+    },
+    {
+    "id": 23,
+    "name": "Dyson Pure Cool Link™ 二合一涼風空氣清淨機 TP03 (白銀色)",
+    "imgUrl": "https://dysonshop.blob.core.windows.net/products/dyson-pure-cool™-link-(white)/help-me-choose-265x265.jpg",
+    "description": "智慧淨化有害氣體以及99.95%空氣中的污染物及過敏原多三倍活性碳以捕捉有害微粒。",
+    "price": "23900",
+    "favorite": false,
+    "count": 0
+    },
+    {
+    "id": 24,
+    "name": "Dyson Pure Cool Link™ 二合一涼風空氣清淨機 TP03 (白銀色)",
+    "imgUrl": "https://dysonshop.blob.core.windows.net/products/dyson-pure-cool™-link-(white)/help-me-choose-265x265.jpg",
+    "description": "智慧淨化有害氣體以及99.95%空氣中的污染物及過敏原多三倍活性碳以捕捉有害微粒。",
+    "price": "23900",
+    "favorite": false,
+    "count": 0
+    },
+    {
+    "id": 25,
+    "name": "Dyson Purifier Cool™ 二合一空氣清淨機 TP07 (黑鋼色)",
+    "imgUrl": "https://dysonshop.blob.core.windows.net/products/dyson-purifier-cool-purifying-fan-black---nickel/help-me-choose-265x265.jpg",
+    "description": "過濾H1N1病毒，捕捉細菌、H1N1、H3N2、EV71病毒90與過敏原，可淨化99.95%小至PM0.1的污染物。",
+    "price": "17900",
+    "favorite": false,
+    "count": 0
+    },
+    {
+    "id": 26,
+    "name": "Dyson Purifier Cool™ 二合一空氣清淨機 TP07 (銀白色)",
+    "imgUrl": "https://dysonshop.blob.core.windows.net/products/dyson-purifier-cool-purifying-fan-white-silver/help-me-choose-265x265.jpg",
+    "description": "過濾H1N1病毒，捕捉細菌、H1N1、H3N2、EV71病毒90與過敏原，可淨化99.95%小至PM0.1的污染物。",
+    "price": "17900",
+    "favorite": false,
+    "count": 0
+    },
+    {
+    "id": 27,
+    "name": "(全新版) Dyson Supersonic™ 吹風機 銀銅色 HD08",
+    "imgUrl": "https://dysonshop.blob.core.windows.net/products/dyson-supersonic™-copper-nickel-hd08/help-me-choose-265x265.jpg",
+    "description": "快速乾髮。免受高熱損傷，專為頭髮及頭皮修護設計。一掃隱藏毛躁，讓髮絲散發柔順光澤。",
+    "price": "14600",
+    "favorite": false,
+    "count": 0
+    },
+    {
+    "id": 28,
+    "name": "Dyson Supersonic™ 吹風機 HD08 全桃紅色節日限定版 附精美禮盒",
+    "imgUrl": "https://dysonshop.blob.core.windows.net/products/dyson-supersonic™-fuchsia-nickel-hd08-with-dyson-designed-prussian-blue-presentation-case/help-me-choose-265x265.jpg",
+    "description": "快速乾髮。免受高熱損傷，專為頭髮及頭皮修護設計。一掃隱藏毛躁，讓髮絲散發柔順光澤。",
+    "price": "15600",
+    "favorite": false,
+    "count": 0
+    },
+    {
+    "id": 29,
+    "name": "(全新版) Dyson Supersonic™ 吹風機 黑鋼色 HD08",
+    "imgUrl": "https://dysonshop.blob.core.windows.net/products/dyson-supersonic™-black-nickel-hd08/help-me-choose-265x265.jpg",
+    "description": "快速乾髮。免受高熱損傷，專為頭髮及頭皮修護設計。一掃隱藏毛躁，讓髮絲散發柔順光澤。",
+    "price": "14600",
+    "favorite": false,
+    "count": 0
+    },
+    {
+    "id": 30,
+    "name": "(全新版) Dyson Supersonic™ 吹風機 桃紅色 HD08",
+    "imgUrl": "https://dysonshop.blob.core.windows.net/products/dyson-supersonic™-black-nickel-hd08/help-me-choose-265x265.jpg",
+    "description": "快速乾髮。免受高熱損傷，專為頭髮及頭皮修護設計。一掃隱藏毛躁，讓髮絲散發柔順光澤。",
+    "price": "14600",
+    "favorite": false,
+    "count": 0
+    }
+    ]
+    }
