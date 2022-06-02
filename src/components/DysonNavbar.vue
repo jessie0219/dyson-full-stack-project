@@ -36,7 +36,7 @@
             </li>
           </ul>
           <form class="d-flex">
-            <div id="window-container">
+            <!-- <div id="window-container">
               <div id="window-pop">
                 <div class="window-content">
                   <span>
@@ -134,8 +134,8 @@
                   </span>
                 </div>
               </div>
-            </div>
-            <a class="m-3" @click="customizeWindowEvent()"
+            </div> -->
+            <a class="m-3" @click="openQuestion"
               ><i class="fa-regular fa-circle-question"></i
             ></a>
             <router-link class="m-3" to="/login"
@@ -159,11 +159,23 @@
 </template>
 
 <script>
+import Swal from "sweetalert2";
 export default {
-  methods: {},
+  methods: {
+    openQuestion() {
+      Swal.fire({
+        title: "聯絡我們",
+        background: "#fff",
+        backdrop: `rgba(255,255,255,0.5) url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjVwK_EkOyoyHpAgrNXW-NF4RPpxUQNPkmvu6Mp94RkaEdBXpQccsbkL18RQvBI6Jj6qFkglfCHlT2wGyfN1am8EsXN7Oe5Xpej0N1i53q7LjKwVfyJqJ9AzGtoTz2hr5fmYB535ft7sPK1shi7ImFkeujMrrGFK3TTH9AQsX46bg6mePxFctnzB9Jf-A/s320/dyson-rainbow2.gif) no-repeat center top`,
+        html:
+          "台灣總代理 恆隆行貿易股份有限公司<br/>地址: 台北市內湖區洲子街88號7樓<br/>電話: 0800-251-209<br/>前往: " +
+          "<a class='text-primary' href='www.hengstyle.com'>www.hengstyle.com</a>",
+        // icon: "question",
+      });
+    },
+  },
   mounted() {
     var nav = document.querySelector("nav");
-
     window.addEventListener("scroll", function () {
       if (this.window.pageYOffset > 100) {
         nav.classList.add("bg-dark", "shadow");
