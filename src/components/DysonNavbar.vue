@@ -2,7 +2,7 @@
   <section id="top" class="second section">
     <nav class="navbar navbar-expand-lg fixed-top" id="nav">
       <div class="container-fluid">
-        <a class="navbar-brand logo" href="#top">dyson</a>
+        <a class="navbar-brand logo" href="#">dyson</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -20,147 +20,75 @@
               <!-- <a class="nav-link link-light" aria-current="page" href="#top"
                 >首頁</a
               > -->
-              <router-link class="nav-link link-light" to="/">首頁</router-link>
-            </li>
-            <li class="nav-item">
-              <!-- <a class="nav-link link-light" href="./products.html">吸塵器</a> -->
-              <router-link class="nav-link link-light" to="/products"
-                >吹風機</router-link
+              <router-link
+                class="nav-link link-light"
+                @click="tabChange(Home)"
+                to="/"
+                >首頁</router-link
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link link-light" href="#">空氣清淨機</a>
+              <!-- <a class="nav-link link-light" href="./products.html">吸塵器</a> -->
+              <router-link
+                class="nav-link link-light"
+                to="/hair"
+                @click="tabChange(Hair)"
+                >頭髮護理</router-link
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link link-light" href="#">吸塵器</a>
+              <router-link
+                class="nav-link link-light"
+                to="/airpurifier"
+                @click="tabChange(AirPurifier)"
+                >空氣清淨機</router-link
+              >
+            </li>
+            <li class="nav-item">
+              <router-link
+                class="nav-link link-light"
+                to="/VacuumCleaner"
+                @click="tabChange(VacuumCleaner)"
+                >吸塵器</router-link
+              >
             </li>
           </ul>
           <form class="d-flex">
-            <!-- <div id="window-container">
-              <div id="window-pop">
-                <div class="window-content">
-                  <span>
-                    <div
-                      class="accordion accordion-flush"
-                      id="accordionFlushExample"
-                    >
-                      <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingOne">
-                          <button
-                            class="accordion-button collapsed"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseOne"
-                            aria-expanded="false"
-                            aria-controls="flush-collapseOne"
-                          >
-                            我愛孔劉~
-                          </button>
-                        </h2>
-                        <div
-                          id="flush-collapseOne"
-                          class="accordion-collapse collapse"
-                          aria-labelledby="flush-headingOne"
-                          data-bs-parent="#accordionFlushExample"
-                        >
-                          <div class="accordion-body">
-                            Placeholder content for this accordion, which is
-                            intended to demonstrate the
-                            <code>.accordion-flush</code> class. This is the
-                            first item's accordion body.
-                          </div>
-                        </div>
-                      </div>
-                      <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingTwo">
-                          <button
-                            class="accordion-button collapsed"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseTwo"
-                            aria-expanded="false"
-                            aria-controls="flush-collapseTwo"
-                          >
-                            我愛曹政奭~
-                          </button>
-                        </h2>
-                        <div
-                          id="flush-collapseTwo"
-                          class="accordion-collapse collapse"
-                          aria-labelledby="flush-headingTwo"
-                          data-bs-parent="#accordionFlushExample"
-                        >
-                          <div class="accordion-body">
-                            Placeholder content for this accordion, which is
-                            intended to demonstrate the
-                            <code>.accordion-flush</code> class. This is the
-                            second item's accordion body. Let's imagine this
-                            being filled with some actual content.
-                          </div>
-                        </div>
-                      </div>
-                      <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingThree">
-                          <button
-                            class="accordion-button collapsed"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseThree"
-                            aria-expanded="false"
-                            aria-controls="flush-collapseThree"
-                          >
-                            不是渣女啦~
-                          </button>
-                        </h2>
-                        <div
-                          id="flush-collapseThree"
-                          class="accordion-collapse collapse"
-                          aria-labelledby="flush-headingThree"
-                          data-bs-parent="#accordionFlushExample"
-                        >
-                          <div class="accordion-body">
-                            Placeholder content for this accordion, which is
-                            intended to demonstrate the
-                            <code>.accordion-flush</code> class. This is the
-                            third item's accordion body. Nothing more exciting
-                            happening here in terms of content, but just filling
-                            up the space to make it look, at least at first
-                            glance, a bit more representative of how this would
-                            look in a real-world application.
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </span>
-                </div>
-              </div>
-            </div> -->
             <a class="m-3" @click="openQuestion"
               ><i class="fa-regular fa-circle-question"></i
             ></a>
-            <router-link class="m-3" to="/login"
+            <router-link class="m-3" to="/login" @click="tabChange(Home)"
               ><i class="fa-solid fa-user-large"></i
             ></router-link>
-
-            <a class="m-3" href="#"
+            <router-link class="m-3" to="/cart" @click="tabChange(Home)"
               ><i class="fa-solid fa-cart-shopping"></i
-            ></a>
+            ></router-link>
           </form>
         </div>
       </div>
     </nav>
-    <div>
-      <div class="text-center justbuy">
-        <a href="#">HEY BRO, JUST BUY IT</a><br />
-        <div class="btn btn-light">DISCOVER THE LINE OUT</div>
-      </div>
-    </div>
+    <div v-is="changePageBtn"></div>
   </section>
 </template>
 
 <script>
 import Swal from "sweetalert2";
+import Hair from "@/components/HairBtn.vue";
+import AirPurifier from "@/components/AirPurifierBtn.vue";
+import VacuumCleaner from "@/components/VacuumCleanerBtn.vue";
+import Home from "@/components/HomePageBtn.vue";
+
 export default {
+  components: { Home, Hair, AirPurifier, VacuumCleaner },
+  data() {
+    return {
+      Home: Home,
+      Hair: Hair,
+      AirPurifier: AirPurifier,
+      VacuumCleaner: VacuumCleaner,
+      changePageBtn: Home,
+    };
+  },
   methods: {
     openQuestion() {
       Swal.fire({
@@ -172,6 +100,9 @@ export default {
           "<a class='text-primary' href='www.hengstyle.com'>www.hengstyle.com</a>",
         // icon: "question",
       });
+    },
+    tabChange(tabItem) {
+      this.changePageBtn = tabItem;
     },
   },
   mounted() {

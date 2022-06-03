@@ -1,7 +1,10 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/homePage.vue'
-import Products from '../views/productsPage.vue'
-import Login from '../views/loginPage.vue'
+import HairPage from '../views/hairPage.vue'
+import LoginPage from '../views/loginPage.vue'
+import CartPage from '../views/CartPage.vue'
+import AirpurifierPage from '../views/airPurifierPage.vue'
+import VacuumCleanerPage from '../views/VacuumCleanerPage.vue'
 
 const routes = [
   {
@@ -10,14 +13,29 @@ const routes = [
     component: Home
   },
   {
-    path: '/products',
-    name: 'products',
-    component: Products
+    path: '/hair',
+    name: 'hair',
+    component: HairPage
   },
   {
     path: '/login',
     name: 'login',
-    component: Login
+    component: LoginPage
+  },
+  {
+    path: '/cart',
+    name: 'cart',
+    component: CartPage
+  },
+  {
+    path: '/airpurifier',
+    name: 'Airpurifier',
+    component: AirpurifierPage
+  },
+  {
+    path: '/VacuumCleaner',
+    name: 'VacuumCleaner',
+    component: VacuumCleanerPage
   },
 ]
 

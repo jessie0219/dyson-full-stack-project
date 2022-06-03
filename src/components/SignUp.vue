@@ -8,7 +8,7 @@
           class="form-control"
           type="email"
           id="emailInput"
-          name="Account"
+          name="email"
           placeholder="輸入email"
           required
         />
@@ -20,7 +20,7 @@
           class="form-control"
           type="text"
           id="accountInput"
-          name="Account"
+          name="account"
           placeholder="輸入帳號"
           required
         />
@@ -32,7 +32,7 @@
           class="form-control"
           type="password"
           id="passwordInput"
-          name="Password"
+          name="password"
           placeholder="輸入密碼"
           required
         />
@@ -43,7 +43,7 @@
           class="form-check-input"
           type="checkbox"
           id="rememberMeCheckbox"
-          name="RememberMe"
+          name="rememberMe"
         />
         <!-- 步驟2 參考文件製作 icon-button(用於觸發顯示彈窗)-->
         <i
@@ -62,13 +62,9 @@
 <script>
 export default {
   data() {
-    return {
-      form: "login",
-    };
+    return {};
   },
-  methods: {
-    signUp() {},
-  },
+  methods: {},
   computed: {
     // form() {
     //   if (this.form === "login") {
