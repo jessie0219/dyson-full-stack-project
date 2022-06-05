@@ -1,98 +1,76 @@
 <template>
   <div class="login container col-sm-4">
-    <h2 class="text-center">登入會員</h2>
-    <form class="needs-validation" novalidate>
-      <div class="mb-3">
-        <label for="accountInput">帳號</label>
-        <input
-          class="form-control"
-          type="text"
-          id="accountInput"
-          name="Account"
-          placeholder="輸入帳號"
-          required
-        />
-        <div class="invalid-feedback">請輸入帳號。</div>
+    <h2 class="text-center m-2">登入會員</h2>
+    <form id="form" class="form">
+      <div class="form-control">
+        <label for="username">Email</label>
+        <input type="email" placeholder="JohnCena@gmail.com" id="email" />
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error message</small>
       </div>
-      <div class="mb-3">
-        <label for="passwordInput">密碼</label>
-        <input
-          class="form-control"
-          type="password"
-          id="passwordInput"
-          name="Passowrd"
-          placeholder="輸入密碼"
-          required
-        />
-        <div class="invalid-feedback">請輸入密碼。</div>
+      <div class="form-control">
+        <label for="username">Password</label>
+        <input type="password" placeholder="Password" id="password" />
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error message</small>
       </div>
-      <div class="form-check mb-3">
-        <input
-          class="form-check-input"
-          type="checkbox"
-          id="rememberMeCheckbox"
-          name="RememberMe"
-        />
-        <label class="form-check-label" for="rememberMeCheckbox"
-          >記住我的帳號</label
-        >
-        <i
-          class="text-primary bi bi-info-circle"
-          id="rememberMeInfoBtn"
-          data-bs-toggle="modal"
-          data-bs-target="#exampleModal"
-          style="cursor: pointer"
-        ></i>
-      </div>
-      <button type="submit" class="btn btn-primary m-3">Login</button>
+      <button>Submit</button>
     </form>
-  </div>
-
-  <!-- Modal -->
-  <div
-    class="modal fade"
-    id="exampleModal"
-    tabindex="-1"
-    aria-labelledby="exampleModalLabel"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">小提示</h5>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-          ></button>
-        </div>
-        <div class="modal-body">
-          記憶您輸入的帳號，讓您更快速地<s>衝動購物</s>登入。
-        </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-primary mx-auto"
-            data-bs-dismiss="modal"
-          >
-            賀啦!
-          </button>
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
 <script>
+import LoginPage from "@/views/loginPage.vue";
 export default {
   data() {
     return {};
   },
-  methods: {
-    signUp() {},
-  },
+  methods: {},
   computed: {},
+  mounted() {
+    const form = document.getElementById("form");
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      checkInputs();
+    });
+    function checkInputs() {
+      // trim to remove the whitespaces
+      const emailValue = email.value.trim();
+      const passwordValue = password.value.trim();
+      if (emailValue === "") {
+        setErrorFor(email, "Email 不能為空");
+      } else if (!isEmail(emailValue)) {
+        setErrorFor(email, "email 格式錯誤");
+      } else {
+        setSuccessFor(email);
+      }
+      if (passwordValue === "") {
+        setErrorFor(password, "Password 不能為空");
+      } else {
+        setSuccessFor(password);
+      }
+    }
+    function setErrorFor(input, message) {
+      const formControl = input.parentElement;
+      const small = formControl.querySelector("small");
+      formControl.className = "form-control error";
+      small.innerText = message;
+    }
+    function setSuccessFor(input) {
+      const formControl = input.parentElement;
+      formControl.className = "form-control success";
+    }
+    function isEmail(email) {
+      return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+        email
+      );
+    }
+  },
+  components: { LoginPage },
 };
 </script>
 
@@ -143,5 +121,85 @@ section .login {
 
 .submitted .invalid {
   border: 1px solid red;
+}
+
+.form {
+  padding: 30px 40px;
+}
+
+.form-control {
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.form-control label {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.form-control input {
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  display: block;
+  font-family: inherit;
+  font-size: 14px;
+  padding: 10px;
+  width: 100%;
+}
+
+.form-control input:focus {
+  outline: 0;
+  border-color: #777;
+}
+
+.form-control.success input {
+  border-color: #2ecc71;
+}
+
+.form-control.error input {
+  border-color: #e74c3c;
+}
+
+.form-control i {
+  visibility: hidden;
+  position: absolute;
+  top: 40px;
+  right: 10px;
+}
+
+.form-control.success i.fa-check-circle {
+  color: #2ecc71;
+  visibility: visible;
+}
+
+.form-control.error i.fa-exclamation-circle {
+  color: #e74c3c;
+  visibility: visible;
+}
+
+.form-control small {
+  color: #e74c3c;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+.form-control.error small {
+  visibility: visible;
+}
+
+.form button {
+  background-color: #161616;
+  border: 2px solid #161616;
+  border-radius: 4px;
+  color: #fff;
+  display: block;
+  font-family: inherit;
+  font-size: 16px;
+  padding: 10px;
+  margin-top: 20px;
+  width: 100%;
 }
 </style>

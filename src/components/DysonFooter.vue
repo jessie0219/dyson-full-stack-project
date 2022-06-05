@@ -37,8 +37,8 @@ footer .footer-icon {
   margin: 0 10px;
   font-size: 25px;
 }
-/* footer .text-end{
-    display:inline;
-    float:right;
+/* footer .text-end {
+  display: inline;
+  float: right;
 } */
 </style>

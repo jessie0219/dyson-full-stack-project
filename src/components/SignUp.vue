@@ -1,85 +1,112 @@
 <template>
-  <div class="login container col-sm-4">
-    <h2 class="text-center">註冊會員</h2>
-    <form class="needs-validation" novalidate>
-      <div class="mb-3">
-        <label for="accountInput">Email</label>
-        <input
-          class="form-control"
-          type="email"
-          id="emailInput"
-          name="email"
-          placeholder="輸入email"
-          required
-        />
-        <div class="invalid-feedback">請輸入email。</div>
+  <div class="signup container col-sm-4">
+    <h2 class="text-center m-2">註冊會員</h2>
+    <form id="form" class="form">
+      <div class="form-control">
+        <label for="username">Username</label>
+        <input type="text" placeholder="John Cena" id="username" />
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error message</small>
       </div>
-      <div class="mb-3">
-        <label for="accountInput">帳號</label>
-        <input
-          class="form-control"
-          type="text"
-          id="accountInput"
-          name="account"
-          placeholder="輸入帳號"
-          required
-        />
-        <div class="invalid-feedback">請輸入帳號。</div>
+      <div class="form-control">
+        <label for="username">Email</label>
+        <input type="email" placeholder="JohnCena@gmail.com" id="email" />
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error message</small>
       </div>
-      <div class="mb-3">
-        <label for="passwordInput">密碼</label>
-        <input
-          class="form-control"
-          type="password"
-          id="passwordInput"
-          name="password"
-          placeholder="輸入密碼"
-          required
-        />
-        <div class="invalid-feedback">請輸入密碼。</div>
+      <div class="form-control">
+        <label for="username">Password</label>
+        <input type="password" placeholder="Password" id="password" />
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error message</small>
       </div>
-      <div class="form-check mb-3">
-        <input
-          class="form-check-input"
-          type="checkbox"
-          id="rememberMeCheckbox"
-          name="rememberMe"
-        />
-        <!-- 步驟2 參考文件製作 icon-button(用於觸發顯示彈窗)-->
-        <i
-          class="text-primary bi bi-info-circle"
-          id="rememberMeInfoBtn"
-          data-bs-toggle="modal"
-          data-bs-target="#exampleModal"
-          style="cursor: pointer"
-        ></i>
+      <div class="form-control">
+        <label for="username">Password check</label>
+        <input type="password" placeholder="Password check" id="password2" />
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error message</small>
       </div>
-      <button type="submit" class="btn btn-primary mb-3">Sign up</button>
+      <button>Submit</button>
     </form>
   </div>
 </template>
 
 <script>
+import LoginPage from "@/views/loginPage.vue";
 export default {
   data() {
     return {};
   },
   methods: {},
-  computed: {
-    // form() {
-    //   if (this.form === "login") {
-    //     return this.products;
-    //   } else if (this.form === "signup") {
-    //     return this.products.filter((item) => this.buying[item.id]);
-    //   }
-    // },
+  computed: {},
+  mounted() {
+    const form = document.getElementById("form");
+    const username = document.getElementById("username");
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+    const password2 = document.getElementById("password2");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      checkInputs();
+    });
+    function checkInputs() {
+      // trim to remove the whitespaces
+      const usernameValue = username.value.trim();
+      const emailValue = email.value.trim();
+      const passwordValue = password.value.trim();
+      const password2Value = password2.value.trim();
+      if (usernameValue === "") {
+        setErrorFor(username, "Username 不能為空");
+      } else {
+        setSuccessFor(username);
+      }
+      if (emailValue === "") {
+        setErrorFor(email, "Email 不能為空");
+      } else if (!isEmail(emailValue)) {
+        setErrorFor(email, "email 格式錯誤");
+      } else {
+        setSuccessFor(email);
+      }
+      if (passwordValue === "") {
+        setErrorFor(password, "Password 不能為空");
+      } else {
+        setSuccessFor(password);
+      }
+      if (password2Value === "") {
+        setErrorFor(password2, "Password_check 不能為空");
+      } else if (passwordValue !== password2Value) {
+        setErrorFor(password2, "Passwords 不相同");
+      } else {
+        setSuccessFor(password2);
+      }
+    }
+    function setErrorFor(input, message) {
+      const formControl = input.parentElement;
+      const small = formControl.querySelector("small");
+      formControl.className = "form-control error";
+      small.innerText = message;
+    }
+    function setSuccessFor(input) {
+      const formControl = input.parentElement;
+      formControl.className = "form-control success";
+    }
+    function isEmail(email) {
+      return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+        email
+      );
+    }
   },
+  components: { LoginPage },
 };
 </script>
 
 <style>
 /* /////////////////////////////////LOGIN PAGE///////////////////////////////// */
-section .login {
+section .signup {
   color: #fff;
   font-size: 2rem;
   position: absolute;
@@ -124,5 +151,106 @@ section .login {
 
 .submitted .invalid {
   border: 1px solid red;
+}
+/* * {
+  box-sizing: border-box;
+}
+.signup {
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  width: 400px;
+  max-width: 100%;
+} */
+
+.form {
+  padding: 30px 40px;
+}
+
+.form-control {
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.form-control label {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.form-control input {
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  display: block;
+  font-family: inherit;
+  font-size: 14px;
+  padding: 10px;
+  width: 100%;
+}
+
+.form-control input:focus {
+  outline: 0;
+  border-color: #777;
+}
+
+.form-control.success input {
+  border-color: #2ecc71;
+}
+
+.form-control.error input {
+  border-color: #e74c3c;
+}
+
+.form-control i {
+  visibility: hidden;
+  position: absolute;
+  top: 40px;
+  right: 10px;
+}
+
+.form-control.success i.fa-check-circle {
+  color: #2ecc71;
+  visibility: visible;
+}
+
+.form-control.error i.fa-exclamation-circle {
+  color: #e74c3c;
+  visibility: visible;
+}
+
+.form-control small {
+  color: #e74c3c;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+.form-control.error small {
+  visibility: visible;
+}
+
+.form button {
+  background-color: #161616;
+  border: 2px solid #161616;
+  border-radius: 4px;
+  color: #fff;
+  display: block;
+  font-family: inherit;
+  font-size: 16px;
+  padding: 10px;
+  margin-top: 20px;
+  width: 100%;
+}
+.small {
+  margin: 10px;
+  padding: 5px;
 }
 </style>

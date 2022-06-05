@@ -1,21 +1,24 @@
 <template>
-  <div class="mt-3 mb-5 text-center">
-    <button
-      type="submit"
-      class="btn btn-secondary mx-3"
-      @click="tabChange(Login)"
-    >
-      Login
-    </button>
-    <button
-      type="submit"
-      class="btn btn-secondary mx-3"
-      @click="tabChange(Sign)"
-    >
-      Sign up
-    </button>
+  <div class="button m-5">
+    <div class="text-center">
+      <button
+        type="submit"
+        class="btn btn-secondary mx-3"
+        @click="tabChange(Login)"
+      >
+        Login
+      </button>
+      <button
+        type="submit"
+        class="btn btn-secondary mx-3"
+        @click="tabChange(Sign)"
+      >
+        Sign up
+      </button>
+    </div>
+    <div v-is="changeView"></div>
   </div>
-  <div v-is="changeView"></div>
+
   <!-- <Login></Login>
   <Sign></Sign> -->
 </template>
@@ -42,4 +45,11 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+body {
+  background-color: #b8aa95;
+}
+.button {
+  height: 100vh;
+}
+</style>
