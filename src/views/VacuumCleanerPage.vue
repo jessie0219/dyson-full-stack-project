@@ -2,7 +2,7 @@
   <section class="pics">
     <!-- <div class="container"> -->
     <div class="container text-center mt-5">
-      <h2>OUR FAVORITE</h2>
+      <h2>吸 塵 器</h2>
       <a href="#">All products</a>
     </div>
     <div class="slider">
@@ -133,39 +133,36 @@
     </div>
     <!-- </div> -->
   </section>
-  <section class="third">
-    <div class="container-fluid">
+  <section class="third product">
+    <div class="container">
       <div class="row">
         <div class="col">
-          <div class="m-5">
-            <div class="card-body">
-              <img
-                src="https://picsum.photos/608/404?random=5"
-                class="card-img-top"
-                alt="..."
-              />
+          <div class="card-body">
+            <div class="m-5">
               <div class="text-center card-body">
-                <h5 class="title text-light mt-5 m-3">
-                  Special title treatment
-                </h5>
-                <a href="#" class="btn btn-light">DISCOVER WHAT</a>
+                <img
+                  src="https://blogger.googleusercontent.com/img/a/AVvXsEg006pTBA4jYAyjXTXB6XUZ2IPOlklm5CM89NaTFCa86hEN-LC8-whjV7_U7UQ3z7HCYyYYv1KzZdaB5YLUfxLK2cr99m61GLM7BYUehovZsBSI8c6IHqQ5OtbNA0jz7bjqHX5byYvKsbXOCRJV0fu0dtwkxg9GyLRI8jya59KsVi9D7JNySi0B_s9uJQ"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <h5 class="title text-light mt-5 m-3">吸塵器</h5>
+                <a href="#" class="btn btn-light">Add to Cart</a>
               </div>
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="m-5">
-            <div class="card-body">
-              <img
-                src="https://picsum.photos/608/404?random=6"
-                class="card-img-top"
-                alt="..."
-              />
+          <div class="card-body">
+            <div class="m-5">
               <div class="text-center card-body">
-                <h5 class="title text-light mt-5 m-3">
-                  Special title treatment
-                </h5>
-                <a href="#" class="btn btn-light">DISCOVER WHAT</a>
+                <img
+                  src="https://blogger.googleusercontent.com/img/a/AVvXsEiVBWZXax_NKJQakHyKz016A-QnM8oPOaF_r7kiEubovuilMYOo5M4PvQ1GUo3Anwe8CUW6J_z7RNtwMpwgYdI3fdUJp8zMy5Q-aAwus3UwgsRP0mQhWKme__xnOhqdCtVqO8u_AowNWW6yPR_f-i9b86SQIow-gezWzOAy9ZPOVBJF13fYarVqePaUUw"
+                  class="card-img-top"
+                  alt="..."
+                />
+
+                <h5 class="title text-light mt-5 m-3">吸塵器</h5>
+                <a href="#" class="btn btn-light">Add to Cart</a>
               </div>
             </div>
           </div>
@@ -173,9 +170,9 @@
       </div>
     </div>
   </section>
-  <section class="four">
+  <!-- <section class="four">
     <div class="picture"></div>
-  </section>
+  </section> -->
 </template>
 
 <script>
@@ -260,5 +257,8 @@ section.pics .slide img:hover {
   right: 0;
   top: 0;
   transform: rotateZ(180deg);
+}
+.third img {
+  width: 400px;
 }
 </style>

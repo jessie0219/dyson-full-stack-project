@@ -123,39 +123,36 @@
     </div>
     <!-- </div> -->
   </section>
-  <section class="third">
-    <div class="container-fluid">
+  <section class="third product">
+    <div class="container">
       <div class="row">
         <div class="col">
-          <div class="m-5">
-            <div class="card-body">
-              <img
-                src="https://picsum.photos/608/404?random=5"
-                class="card-img-top"
-                alt="..."
-              />
+          <div class="card-body">
+            <div class="m-5">
               <div class="text-center card-body">
-                <h5 class="title text-light mt-5 m-3">
-                  Special title treatment
-                </h5>
-                <a href="#" class="btn btn-light">DISCOVER WHAT</a>
+                <img
+                  src="https://blogger.googleusercontent.com/img/a/AVvXsEi0gfeqdL09SUEjPCWDuuW4Pkf3IUS_96lDDZojJQH4PMMzi1zvoo1ew5PGJEEyRU7UVlk9y6ON9I8RRdzefRoa2pxzE0yDk5M7ReNQGQK1kO1xNszIFcJvuo9bRmOzkGald_1EmfySFlBweS-DbtdU0bz_UC5yUuyTBXbowB1YH2D0RsntpnacJHds6Q"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <h5 class="title text-light mt-5 m-3">吹風機</h5>
+                <a href="#" class="btn btn-light">Add to Cart</a>
               </div>
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="m-5">
-            <div class="card-body">
-              <img
-                src="https://picsum.photos/608/404?random=6"
-                class="card-img-top"
-                alt="..."
-              />
+          <div class="card-body">
+            <div class="m-5">
               <div class="text-center card-body">
-                <h5 class="title text-light mt-5 m-3">
-                  Special title treatment
-                </h5>
-                <a href="#" class="btn btn-light">DISCOVER WHAT</a>
+                <img
+                  src="https://blogger.googleusercontent.com/img/a/AVvXsEg_7XL1JX01_uhX8LK9psJb9Cv65CKS38DGemXaMRLdghpNlaARTh83pejA_0xwNq3_AkyEXrhd6yUCkQESNOPddWOVTNBg1XZT59wW6PQ6_nJhXmnyTCu3xHR_w4DFh9dayD21jJCCt3A4KPCYib40zXI2LWsp8hR1RMwxp95L1ipmRCmZJylg7y45Eg"
+                  class="card-img-top"
+                  alt="..."
+                />
+
+                <h5 class="title text-light mt-5 m-3">造型器</h5>
+                <a href="#" class="btn btn-light">Add to Cart</a>
               </div>
             </div>
           </div>
@@ -163,9 +160,9 @@
       </div>
     </div>
   </section>
-  <section class="four">
+  <!-- <section class="four">
     <div class="picture"></div>
-  </section>
+  </section> -->
 </template>
 
 <script>
@@ -250,5 +247,8 @@ section.pics .slide img:hover {
   right: 0;
   top: 0;
   transform: rotateZ(180deg);
+}
+section.product {
+  background-color: #555555;
 }
 </style>

@@ -2,7 +2,7 @@
   <section class="pics">
     <!-- <div class="container"> -->
     <div class="container text-center mt-5">
-      <h2>OUR FAVORITE</h2>
+      <h2>空 氣 清 淨 機</h2>
       <a href="#">All products</a>
     </div>
     <div class="slider">
@@ -109,39 +109,36 @@
     </div>
     <!-- </div> -->
   </section>
-  <section class="third">
-    <div class="container-fluid">
+  <section class="third product">
+    <div class="container">
       <div class="row">
         <div class="col">
-          <div class="m-5">
-            <div class="card-body">
-              <img
-                src="https://picsum.photos/608/404?random=5"
-                class="card-img-top"
-                alt="..."
-              />
+          <div class="card-body">
+            <div class="m-5">
               <div class="text-center card-body">
-                <h5 class="title text-light mt-5 m-3">
-                  Special title treatment
-                </h5>
-                <a href="#" class="btn btn-light">DISCOVER WHAT</a>
+                <img
+                  src="../assets/airpurifier-涼暖空淨機.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <h5 class="title text-light mt-5 m-3">空氣清淨機</h5>
+                <a href="#" class="btn btn-light">Add to Cart</a>
               </div>
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="m-5">
-            <div class="card-body">
-              <img
-                src="https://picsum.photos/608/404?random=6"
-                class="card-img-top"
-                alt="..."
-              />
+          <div class="card-body">
+            <div class="m-5">
               <div class="text-center card-body">
-                <h5 class="title text-light mt-5 m-3">
-                  Special title treatment
-                </h5>
-                <a href="#" class="btn btn-light">DISCOVER WHAT</a>
+                <img
+                  src="../assets/airpurifier-二合一涼風空氣清淨機TP7A(鎳白色).png"
+                  class="card-img-top"
+                  alt="..."
+                />
+
+                <h5 class="title text-light mt-5 m-3">空氣清淨機</h5>
+                <a href="#" class="btn btn-light">Add to Cart</a>
               </div>
             </div>
           </div>
@@ -149,9 +146,9 @@
       </div>
     </div>
   </section>
-  <section class="four">
+  <!-- <section class="four">
     <div class="picture"></div>
-  </section>
+  </section> -->
 </template>
 
 <script>

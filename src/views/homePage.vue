@@ -5,12 +5,13 @@
         <div class="col">
           <div class="m-5">
             <div class="card-body">
-              <img
-                src="https://picsum.photos/608/404?random=5"
-                class="card-img-top"
-                alt="..."
-              />
               <div class="text-center card-body">
+                <img
+                  src="https://picsum.photos/608/404?random=5"
+                  class="card-img-top"
+                  alt="..."
+                />
+
                 <h5 class="title text-light mt-5 m-3">
                   Special title treatment
                 </h5>
@@ -22,12 +23,13 @@
         <div class="col">
           <div class="m-5">
             <div class="card-body">
-              <img
-                src="https://picsum.photos/608/404?random=6"
-                class="card-img-top"
-                alt="..."
-              />
               <div class="text-center card-body">
+                <img
+                  src="https://picsum.photos/608/404?random=6"
+                  class="card-img-top"
+                  alt="..."
+                />
+
                 <h5 class="title text-light mt-5 m-3">
                   Special title treatment
                 </h5>
