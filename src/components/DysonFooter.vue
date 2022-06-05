@@ -2,7 +2,7 @@
   <footer class="section">
     <div class="container">
       <div class="text-center">
-        <span class="logo"><a href="#top">dyson</a></span>
+        <span class="logo"><a to="/">dyson</a></span>
       </div>
       <div class="text-center mt-3">
         <span class="footer-icon"

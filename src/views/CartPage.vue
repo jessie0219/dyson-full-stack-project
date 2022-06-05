@@ -1,91 +1,91 @@
 <template>
-  <main id="cart" style="max-width: 960px">
-    <!-- <div class="back"><a href="#">&#11178; shop</a></div> -->
-    <h1>Your Cart</h1>
-    <div class="container-fluid mb-5">
-      <div class="row align-items-start">
-        <div class="col-12 col-sm-8 items">
-          <!--1-->
-          <div class="cartItem row align-items-start">
-            <div class="col-3 mb-2">
-              <img
-                class="w-100"
-                src="https://badux.co/smc/codepen/birdcage-posters.jpg"
-                alt="art image"
-              />
-            </div>
-            <div class="col-5 mb-2">
-              <h6 class="">Dark Art 1</h6>
-              <p class="pl-1 mb-0">20 x 24</p>
-              <p class="pl-1 mb-0">Matte Print</p>
-            </div>
-            <div class="col-2">
-              <p class="cartItemQuantity p-1 text-center">1</p>
-            </div>
-            <div class="col-2">
-              <p id="cartItem1Price">$66</p>
-            </div>
+  <div class="container mb-5">
+    <h1 class="mb-5">購物車</h1>
+    <div class="row align-items-start">
+      <div class="col-12 col-sm-8 items">
+        <!--1-->
+        <div class="cartItem row align-items-start">
+          <div class="col-3 mb-2">
+            <img
+              class="w-100"
+              src="https://blogger.googleusercontent.com/img/a/AVvXsEjlHGIyRTZOqXPI9Z_AKPeuODaY2nmFPqnWIMeVmSZFf1BL3VVP9mK_S1MvWBSho66qsjwnwg7UZ0G_bpmwxIdVtlHurgoBLAofYG6ZrMaZH4Kr7xYyNP0yS8XM2GJgJ6cC9xmJQvw1rqyIzD-1Srv7Cvdo5F5WfZmPcI8YDnMyVwlqBNLawtHkieXWLg"
+              alt="art image"
+            />
           </div>
-          <hr />
-          <!--2-->
-          <div class="cartItem row align-items-start">
-            <div class="col-3 mb-2">
-              <img
-                class="w-100"
-                src="https://badux.co/smc/codepen/birdcage-posters.jpg"
-                alt="art image"
-              />
-            </div>
-            <div class="col-5 mb-2">
-              <h6 class="">Dark Art 2</h6>
-              <p class="pl-1 mb-0">20 x 24</p>
-              <p class="pl-1 mb-0">Matte Print</p>
-            </div>
-            <div class="col-2">
-              <p class="cartItemQuantity p-1 text-center">1</p>
-            </div>
-            <div class="col-2">
-              <p id="cartItem1Price">$66</p>
-            </div>
+          <div class="col-5 mb-2">
+            <h4 class="text-start">吹風機</h4>
+            <h5 class="text-dark" id="cartItem1Price">NT. 17900</h5>
           </div>
-          <hr />
+          <div class="col-2">
+            <div class="d-flex">
+              <button class="btn btn-primary">+</button>
+              <div class="cartItemQuantity mx-1 px-4 py-2 text-center">1</div>
+              <button class="btn btn-primary">-</button>
+            </div>
+            <div class="my-3">小計: NT.17900</div>
+            <div class="my-2 btn btn-danger">Delete</div>
+          </div>
         </div>
-        <div class="col-12 col-sm-4 p-3 proceed form">
-          <div class="row m-0">
-            <div class="col-sm-8 p-0">
-              <h6>Subtotal</h6>
-            </div>
-            <div class="col-sm-4 p-0">
-              <p id="subtotal">$132.00</p>
-            </div>
+        <hr />
+        <!--2-->
+        <div class="cartItem row align-items-start">
+          <div class="col-3 mb-2">
+            <img
+              class="w-100"
+              src="https://blogger.googleusercontent.com/img/a/AVvXsEhYrF8N_i9MzVUJsaOVaK5DFcYEOpFtj0BD5_yIAvGhkk8yd3YDfKraNaQmtc5_aMozM1UIJRbzmaU8cEyGRhusVCgh7imvXYBXaCVBlr9b5t85o1Biy0Gx9WJiLzF7UgdeBeJtVezitNK9y4R0YzoK8zhEc_alKfy4KtO52cv7nkjdEyv6C8mQnZv8pg"
+              alt="art image"
+            />
           </div>
-          <div class="row m-0">
-            <div class="col-sm-8 p-0">
-              <h6>Tax</h6>
-            </div>
-            <div class="col-sm-4 p-0">
-              <p id="tax">$6.40</p>
-            </div>
+          <div class="col-5 mb-2">
+            <h4 class="text-start">吸塵器</h4>
+            <h5 class="text-dark" id="cartItem1Price">NT. 28900</h5>
           </div>
-          <hr />
-          <div class="row mx-0 mb-2">
-            <div class="col-sm-8 p-0 d-inline">
-              <h5>Total</h5>
+          <div class="col-2">
+            <div class="d-flex">
+              <button class="btn btn-primary">+</button>
+              <div class="cartItemQuantity mx-1 px-4 py-2 text-center">1</div>
+              <button class="btn btn-primary">-</button>
             </div>
-            <div class="col-sm-4 p-0">
-              <p id="total">$138.40</p>
-            </div>
+            <div class="my-3">小計: NT.28900</div>
+            <div class="my-2 btn btn-danger">Delete</div>
           </div>
-          <a href="#"
-            ><button id="btn-checkout" class="shopnow">
-              <span>Checkout</span>
-            </button></a
-          >
         </div>
+        <hr />
+      </div>
+      <div class="col-12 col-sm-4 p-3 proceed form">
+        <!-- <div class="row m-0">
+          <div class="col-sm-8 p-0">
+            <h6>Subtotal</h6>
+          </div>
+          <div class="col-sm-4 p-0">
+            <p id="subtotal">$132.00</p>
+          </div>
+        </div> -->
+        <!-- <div class="row m-0">
+          <div class="col-sm-8 p-0">
+            <h6>Tax</h6>
+          </div>
+          <div class="col-sm-4 p-0">
+            <p id="tax">$6.40</p>
+          </div>
+        </div>
+        <hr /> -->
+        <div class="row mx-0 mb-2">
+          <div class="col-sm-8 p-0 d-inline">
+            <h5 class="text-dark">Total</h5>
+          </div>
+          <div class="col-sm-4 p-0">
+            <p id="total">NT. 46800</p>
+          </div>
+        </div>
+        <a
+          ><button id="btn-checkout" class="shopnow">
+            <span>Checkout</span>
+          </button></a
+        >
       </div>
     </div>
-    <!-- </div> -->
-  </main>
+  </div>
 </template>
 
 <script>
@@ -93,11 +93,11 @@ export default {};
 </script>
 
 <style>
-#cart {
+/* #cart {
   max-width: 1440px;
   padding-top: 60px;
   margin: auto;
-}
+} */
 .form div {
   margin-bottom: 0.4em;
 }
@@ -224,6 +224,7 @@ h4 {
 .shopnow span:after {
   content: url("https://badux.co/smc/codepen/caticon.png");
   position: absolute;
+  text-align: center;
   font-size: 30px;
   opacity: 0;
   top: 2px;
