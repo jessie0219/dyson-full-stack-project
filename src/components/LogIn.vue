@@ -10,13 +10,13 @@
         <small>Error message</small>
       </div>
       <div class="form-control">
-        <label for="username">Password</label>
+        <label for="username">密碼</label>
         <input type="password" placeholder="Password" id="password" />
         <i class="fas fa-check-circle"></i>
         <i class="fas fa-exclamation-circle"></i>
         <small>Error message</small>
       </div>
-      <button>Submit</button>
+      <button>Log in</button>
     </form>
   </div>
 </template>
@@ -42,14 +42,14 @@ export default {
       const emailValue = email.value.trim();
       const passwordValue = password.value.trim();
       if (emailValue === "") {
-        setErrorFor(email, "Email 不能為空");
+        setErrorFor(email, "請輸入Email");
       } else if (!isEmail(emailValue)) {
-        setErrorFor(email, "email 格式錯誤");
+        setErrorFor(email, "Email 格式錯誤");
       } else {
         setSuccessFor(email);
       }
       if (passwordValue === "") {
-        setErrorFor(password, "Password 不能為空");
+        setErrorFor(password, "請輸入密碼");
       } else {
         setSuccessFor(password);
       }

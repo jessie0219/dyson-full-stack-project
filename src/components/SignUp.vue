@@ -3,7 +3,7 @@
     <h2 class="text-center m-2">註冊會員</h2>
     <form id="form" class="form">
       <div class="form-control">
-        <label for="username">Username</label>
+        <label for="username">暱稱</label>
         <input type="text" placeholder="John Cena" id="username" />
         <i class="fas fa-check-circle"></i>
         <i class="fas fa-exclamation-circle"></i>
@@ -17,20 +17,20 @@
         <small>Error message</small>
       </div>
       <div class="form-control">
-        <label for="username">Password</label>
+        <label for="username">密碼</label>
         <input type="password" placeholder="Password" id="password" />
         <i class="fas fa-check-circle"></i>
         <i class="fas fa-exclamation-circle"></i>
         <small>Error message</small>
       </div>
       <div class="form-control">
-        <label for="username">Password check</label>
+        <label for="username">再次輸入密碼</label>
         <input type="password" placeholder="Password check" id="password2" />
         <i class="fas fa-check-circle"></i>
         <i class="fas fa-exclamation-circle"></i>
         <small>Error message</small>
       </div>
-      <button>Submit</button>
+      <button>Sign up</button>
     </form>
   </div>
 </template>
@@ -60,26 +60,26 @@ export default {
       const passwordValue = password.value.trim();
       const password2Value = password2.value.trim();
       if (usernameValue === "") {
-        setErrorFor(username, "Username 不能為空");
+        setErrorFor(username, "請輸入暱稱");
       } else {
         setSuccessFor(username);
       }
       if (emailValue === "") {
-        setErrorFor(email, "Email 不能為空");
+        setErrorFor(email, "請輸入Email");
       } else if (!isEmail(emailValue)) {
-        setErrorFor(email, "email 格式錯誤");
+        setErrorFor(email, "Email 格式錯誤");
       } else {
         setSuccessFor(email);
       }
       if (passwordValue === "") {
-        setErrorFor(password, "Password 不能為空");
+        setErrorFor(password, "請輸入密碼");
       } else {
         setSuccessFor(password);
       }
       if (password2Value === "") {
-        setErrorFor(password2, "Password_check 不能為空");
+        setErrorFor(password2, "請再次輸入密碼");
       } else if (passwordValue !== password2Value) {
-        setErrorFor(password2, "Passwords 不相同");
+        setErrorFor(password2, "輸入密碼不相同");
       } else {
         setSuccessFor(password2);
       }
