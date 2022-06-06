@@ -14,11 +14,6 @@ export default {
     Footer,
     Cart,
   },
-  data() {},
-  methods: {},
-  watch: {},
-  computed: {},
-  props: [],
 };
 </script>
 

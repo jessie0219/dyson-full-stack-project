@@ -4,92 +4,53 @@
     <div class="row align-items-start">
       <div class="col-12 col-sm-8 items">
         <!--1-->
-        <div class="cartItem row align-items-start">
-          <div class="col-3 mb-2">
-            <img
-              class="w-100"
-              src="https://blogger.googleusercontent.com/img/a/AVvXsEjlHGIyRTZOqXPI9Z_AKPeuODaY2nmFPqnWIMeVmSZFf1BL3VVP9mK_S1MvWBSho66qsjwnwg7UZ0G_bpmwxIdVtlHurgoBLAofYG6ZrMaZH4Kr7xYyNP0yS8XM2GJgJ6cC9xmJQvw1rqyIzD-1Srv7Cvdo5F5WfZmPcI8YDnMyVwlqBNLawtHkieXWLg"
-              alt="art image"
-            />
-          </div>
-          <div class="col-5 mb-2">
-            <h4 class="text-start">吹風機</h4>
-            <h5 class="text-dark" id="cartItem1Price">NT. 17900</h5>
-          </div>
-          <div class="col-2">
-            <div class="d-flex">
-              <button class="btn btn-primary">+</button>
-              <div class="cartItemQuantity mx-1 px-4 py-2 text-center">1</div>
-              <button class="btn btn-primary">-</button>
-            </div>
-            <div class="my-3">小計: NT.17900</div>
-            <div class="my-2 btn btn-danger">Delete</div>
-          </div>
-        </div>
-        <hr />
-        <!--2-->
-        <div class="cartItem row align-items-start">
-          <div class="col-3 mb-2">
-            <img
-              class="w-100"
-              src="https://blogger.googleusercontent.com/img/a/AVvXsEhYrF8N_i9MzVUJsaOVaK5DFcYEOpFtj0BD5_yIAvGhkk8yd3YDfKraNaQmtc5_aMozM1UIJRbzmaU8cEyGRhusVCgh7imvXYBXaCVBlr9b5t85o1Biy0Gx9WJiLzF7UgdeBeJtVezitNK9y4R0YzoK8zhEc_alKfy4KtO52cv7nkjdEyv6C8mQnZv8pg"
-              alt="art image"
-            />
-          </div>
-          <div class="col-5 mb-2">
-            <h4 class="text-start">吸塵器</h4>
-            <h5 class="text-dark" id="cartItem1Price">NT. 28900</h5>
-          </div>
-          <div class="col-2">
-            <div class="d-flex">
-              <button class="btn btn-primary">+</button>
-              <div class="cartItemQuantity mx-1 px-4 py-2 text-center">1</div>
-              <button class="btn btn-primary">-</button>
-            </div>
-            <div class="my-3">小計: NT.28900</div>
-            <div class="my-2 btn btn-danger">Delete</div>
-          </div>
-        </div>
-        <hr />
+        
+        <ProductsCart />
+        
       </div>
       <div class="col-12 col-sm-4 p-3 proceed form">
-        <!-- <div class="row m-0">
-          <div class="col-sm-8 p-0">
-            <h6>Subtotal</h6>
-          </div>
-          <div class="col-sm-4 p-0">
-            <p id="subtotal">$132.00</p>
-          </div>
-        </div> -->
-        <!-- <div class="row m-0">
-          <div class="col-sm-8 p-0">
-            <h6>Tax</h6>
-          </div>
-          <div class="col-sm-4 p-0">
-            <p id="tax">$6.40</p>
-          </div>
-        </div>
-        <hr /> -->
         <div class="row mx-0 mb-2">
           <div class="col-sm-8 p-0 d-inline">
             <h5 class="text-dark">Total</h5>
           </div>
           <div class="col-sm-4 p-0">
-            <p id="total">NT. 46800</p>
+            <p id="total">NT. {{totalPrice}}</p>
           </div>
         </div>
-        <a
-          ><button id="btn-checkout" class="shopnow">
+        <a><button id="btn-checkout" class="shopnow" >
             <span>Checkout</span>
-          </button></a
-        >
+          </button></a>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import { computed, onMounted } from '@vue/runtime-core'
+import { useStore } from 'vuex';
+import ProductsCart from "@/components/ProductsCart";
+
+
+
+export default{
+    name: 'CartPage',
+    components:{
+    ProductsCart
+},
+    setup(){
+        const store = useStore()
+        onMounted(() => {
+            store.dispatch('fetchData')
+        })
+        const products = computed(() => store.state.products)
+        
+        const totalQuantity = computed(() => store.getters.totalQuantity)
+        const totalPrice = computed(() => store.getters.totalPrice)
+        
+
+        return {products, totalQuantity, totalPrice}
+    }
+}
 </script>
 
 <style>
