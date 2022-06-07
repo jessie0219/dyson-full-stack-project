@@ -136,37 +136,10 @@
   <section class="third product">
     <div class="container">
       <div class="row">
-        <div class="col">
-          <div class="card-body">
-            <div class="m-5">
-              <div class="text-center card-body">
-                <img
-                  src="https://blogger.googleusercontent.com/img/a/AVvXsEg006pTBA4jYAyjXTXB6XUZ2IPOlklm5CM89NaTFCa86hEN-LC8-whjV7_U7UQ3z7HCYyYYv1KzZdaB5YLUfxLK2cr99m61GLM7BYUehovZsBSI8c6IHqQ5OtbNA0jz7bjqHX5byYvKsbXOCRJV0fu0dtwkxg9GyLRI8jya59KsVi9D7JNySi0B_s9uJQ"
-                  class="card-img-top"
-                  alt="..."
-                />
-                <h5 class="title text-light mt-5 m-3">吸塵器</h5>
-                <a href="#" class="btn btn-light">Add to Cart</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card-body">
-            <div class="m-5">
-              <div class="text-center card-body">
-                <img
-                  src="https://blogger.googleusercontent.com/img/a/AVvXsEiVBWZXax_NKJQakHyKz016A-QnM8oPOaF_r7kiEubovuilMYOo5M4PvQ1GUo3Anwe8CUW6J_z7RNtwMpwgYdI3fdUJp8zMy5Q-aAwus3UwgsRP0mQhWKme__xnOhqdCtVqO8u_AowNWW6yPR_f-i9b86SQIow-gezWzOAy9ZPOVBJF13fYarVqePaUUw"
-                  class="card-img-top"
-                  alt="..."
-                />
-
-                <h5 class="title text-light mt-5 m-3">吸塵器</h5>
-                <a href="#" class="btn btn-light">Add to Cart</a>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Product 
+    v-for="product of products" :key="product.id" :product="product"
+    />
+        
       </div>
     </div>
   </section>
@@ -176,7 +149,31 @@
 </template>
 
 <script>
-export default {};
+import { useStore } from 'vuex'
+import Product from '@/components/Product'
+import { computed, onMounted } from '@vue/runtime-core'
+
+
+
+export default{
+    name: 'VacuumCleanerPage',
+    components:{
+        Product
+    },
+    setup(){
+        const store = useStore()
+        onMounted(() => {
+            store.dispatch('fetchData')
+        })
+        const products = computed(() => store.state.products)
+        // const cart = computed(() => store.state.cart)
+
+        return {products}
+      
+    }
+}
+
+
 </script>
 
 <style>
@@ -261,4 +258,9 @@ section.pics .slide img:hover {
 .third img {
   width: 400px;
 }
+.product img
+{
+    width: 80%;
+}
+
 </style>
