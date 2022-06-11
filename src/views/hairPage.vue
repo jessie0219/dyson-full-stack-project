@@ -123,50 +123,38 @@
     </div>
     <!-- </div> -->
   </section>
-  <section class="third product">
+   <section class="third product">
     <div class="container">
       <div class="row">
-        <div class="col">
-          <div class="card-body">
-            <div class="m-5">
-              <div class="text-center card-body">
-                <img
-                  src="https://blogger.googleusercontent.com/img/a/AVvXsEi0gfeqdL09SUEjPCWDuuW4Pkf3IUS_96lDDZojJQH4PMMzi1zvoo1ew5PGJEEyRU7UVlk9y6ON9I8RRdzefRoa2pxzE0yDk5M7ReNQGQK1kO1xNszIFcJvuo9bRmOzkGald_1EmfySFlBweS-DbtdU0bz_UC5yUuyTBXbowB1YH2D0RsntpnacJHds6Q"
-                  class="card-img-top"
-                  alt="..."
-                />
-                <h5 class="title text-light mt-5 m-3">吹風機</h5>
-                <a href="#" class="btn btn-light">Add to Cart</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card-body">
-            <div class="m-5">
-              <div class="text-center card-body">
-                <img
-                  src="https://blogger.googleusercontent.com/img/a/AVvXsEg_7XL1JX01_uhX8LK9psJb9Cv65CKS38DGemXaMRLdghpNlaARTh83pejA_0xwNq3_AkyEXrhd6yUCkQESNOPddWOVTNBg1XZT59wW6PQ6_nJhXmnyTCu3xHR_w4DFh9dayD21jJCCt3A4KPCYib40zXI2LWsp8hR1RMwxp95L1ipmRCmZJylg7y45Eg"
-                  class="card-img-top"
-                  alt="..."
-                />
-
-                <h5 class="title text-light mt-5 m-3">造型器</h5>
-                <a href="#" class="btn btn-light">Add to Cart</a>
-              </div>
-            </div>
-          </div>
-        </div>
+      
+        <producthair 
+    v-for="product in products" :key="product.Id" :product="product"
+    />
+        
       </div>
     </div>
   </section>
-  <!-- <section class="four">
-    <div class="picture"></div>
-  </section> -->
+
 </template>
 
 <script>
-export default {};
+import Producthair from '@/components/Producthair.vue';
+import { useStore } from 'vuex'
+import { computed, onMounted } from '@vue/runtime-core'
+
+export default {
+  components: { Producthair },
+  setup(){
+        const store = useStore()
+        onMounted(() => {
+            store.dispatch('fetchData')
+        })
+        const products = computed(() => store.state.products)
+
+        
+        return {products}
+    },
+  };
 </script>
 
 <style>

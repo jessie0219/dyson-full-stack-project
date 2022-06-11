@@ -112,47 +112,35 @@
   <section class="third product">
     <div class="container">
       <div class="row">
-        <div class="col">
-          <div class="card-body">
-            <div class="m-5">
-              <div class="text-center card-body">
-                <img
-                  src="../assets/airpurifier-涼暖空淨機.png"
-                  class="card-img-top"
-                  alt="..."
-                />
-                <h5 class="title text-light mt-5 m-3">空氣清淨機</h5>
-                <a href="#" class="btn btn-light">Add to Cart</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card-body">
-            <div class="m-5">
-              <div class="text-center card-body">
-                <img
-                  src="../assets/airpurifier-二合一涼風空氣清淨機TP7A(鎳白色).png"
-                  class="card-img-top"
-                  alt="..."
-                />
-
-                <h5 class="title text-light mt-5 m-3">空氣清淨機</h5>
-                <a href="#" class="btn btn-light">Add to Cart</a>
-              </div>
-            </div>
-          </div>
-        </div>
+      
+        <productair 
+    v-for="product in products" :key="product.Id" :product="product"
+    />
+        
       </div>
     </div>
   </section>
-  <!-- <section class="four">
-    <div class="picture"></div>
-  </section> -->
+  
 </template>
 
 <script>
-export default {};
+import Productair from '@/components/Productair.vue';
+import { useStore } from 'vuex'
+import { computed, onMounted } from '@vue/runtime-core'
+
+export default {
+  components: { Productair },
+  setup(){
+        const store = useStore()
+        onMounted(() => {
+            store.dispatch('fetchData')
+        })
+        const products = computed(() => store.state.products)
+
+        
+        return {products}
+    },
+  };
 </script>
 
 <style>

@@ -2,32 +2,47 @@
   <div class="container mb-5">
     <h1 class="mb-5">購物車</h1>
     <div class="row align-items-start">
-      <div class="col-12 col-sm-8 items">
-        <!--1-->
-        
+
+          <div class="col-12 col-sm-8 items">
+
+
         <ProductsCart />
         
       </div>
-      <div class="col-12 col-sm-4 p-3 proceed form">
+<div class="col-12 col-sm-4 p-3 proceed form">
         <div class="row mx-0 mb-2">
           <div class="col-sm-8 p-0 d-inline">
             <h5 class="text-dark">Total</h5>
           </div>
           <div class="col-sm-4 p-0">
+            <p id="total">商品總件數 {{totalQuantity}}</p>
+
+
             <p id="total">NT. {{totalPrice}}</p>
           </div>
         </div>
-        <a><button id="btn-checkout" class="shopnow" >
+        <button id="btn-checkout" class="shopnow" @click="sentOrder">
             <span>Checkout</span>
-          </button></a>
+          </button>
+          </div>
+
+
+
+
+        
+      
+      
+      
+          
       </div>
-    </div>
+    
   </div>
 </template>
 
 <script>
 import { computed, onMounted } from '@vue/runtime-core'
 import { useStore } from 'vuex';
+import axios from 'axios';
 import ProductsCart from "@/components/ProductsCart";
 
 
@@ -37,6 +52,23 @@ export default{
     components:{
     ProductsCart
 },
+data() {
+  return {
+    orderdata:{
+      Quantity: this.totalQuantity,
+      Amount: this.totalPrice
+    }
+  }
+},
+methods: {
+    async sentOrder() {
+      await axios({
+        method: "post",
+        url: "http://localhost:5000/api/orders",
+        data: this.orderdata,
+      }).then(this.$router.push({ path: '/' }))
+    },
+  },
     setup(){
         const store = useStore()
         onMounted(() => {
@@ -47,8 +79,10 @@ export default{
         const totalQuantity = computed(() => store.getters.totalQuantity)
         const totalPrice = computed(() => store.getters.totalPrice)
         
+        const cartitems = computed(() => store.state.cart)
 
-        return {products, totalQuantity, totalPrice}
+
+        return {products, totalQuantity, totalPrice, cartitems}
     }
 }
 </script>
