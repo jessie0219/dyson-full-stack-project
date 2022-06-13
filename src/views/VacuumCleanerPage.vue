@@ -136,16 +136,15 @@
   <section class="third product">
     <div class="container">
       <div class="row">
+      
         <Product 
-    v-for="product of products" :key="product.id" :product="product"
+    v-for="product in products" :key="product.Id" :product="product"
     />
         
       </div>
     </div>
   </section>
-  <!-- <section class="four">
-    <div class="picture"></div>
-  </section> -->
+
 </template>
 
 <script>
@@ -166,11 +165,10 @@ export default{
             store.dispatch('fetchData')
         })
         const products = computed(() => store.state.products)
-        // const cart = computed(() => store.state.cart)
 
+        
         return {products}
-      
-    }
+    },
 }
 
 

@@ -37,12 +37,11 @@
 
 <script>
 import LoginPage from "@/views/loginPage.vue";
+
+
+
 export default {
-  data() {
-    return {};
-  },
-  methods: {},
-  computed: {},
+  
   mounted() {
     const form = document.getElementById("form");
     const username = document.getElementById("username");
