@@ -3,48 +3,66 @@
     <h2 class="text-center m-2">註冊會員</h2>
     <form id="form" class="form">
       <div class="form-control">
-        <label for="username">暱稱</label>
-        <input type="text" placeholder="John Cena" id="username" />
+        <label for="userName">暱稱</label>
+        <input type="text" placeholder="John Cena" id="userName" v-model="userName" name="userName"/>
         <i class="fas fa-check-circle"></i>
         <i class="fas fa-exclamation-circle"></i>
         <small>Error message</small>
       </div>
       <div class="form-control">
-        <label for="username">Email</label>
-        <input type="email" placeholder="JohnCena@gmail.com" id="email" />
+        <label for="email">Email</label>
+        <input type="email" placeholder="JohnCena@gmail.com" id="email" v-model="email" name="email"/>
         <i class="fas fa-check-circle"></i>
         <i class="fas fa-exclamation-circle"></i>
         <small>Error message</small>
       </div>
       <div class="form-control">
-        <label for="username">密碼</label>
-        <input type="password" placeholder="Password" id="password" />
+        <label for="password">密碼</label>
+        <input type="password" placeholder="Password" id="password" v-model="password" name="password"/>
         <i class="fas fa-check-circle"></i>
         <i class="fas fa-exclamation-circle"></i>
         <small>Error message</small>
       </div>
       <div class="form-control">
-        <label for="username">再次輸入密碼</label>
+        <label for="userName">再次輸入密碼</label>
         <input type="password" placeholder="Password check" id="password2" />
         <i class="fas fa-check-circle"></i>
         <i class="fas fa-exclamation-circle"></i>
         <small>Error message</small>
       </div>
-      <button>Sign up</button>
+      <button
+      @click="register"
+      >Sign up</button>
     </form>
   </div>
 </template>
 
 <script>
 import LoginPage from "@/views/loginPage.vue";
-
-
-
+import authenticationService from '../services/authenticationService'
 export default {
-  
+  data() {
+    return {
+      userName: "",
+      email: "",
+      password:"",
+
+    };
+  },
+  methods: {
+    async register(){
+      const response = await authenticationService.register({
+        userName: this.userName,
+        email: this.email,
+        password: this.password
+      });
+      console.log(response.data)
+    }
+  },
+  computed: {},
   mounted() {
     const form = document.getElementById("form");
-    const username = document.getElementById("username");
+    const userName = document.getElementById("userName");
     const email = document.getElementById("email");
     const password = document.getElementById("password");
     const password2 = document.getElementById("password2");
@@ -54,14 +72,14 @@ export default {
     });
     function checkInputs() {
       // trim to remove the whitespaces
-      const usernameValue = username.value.trim();
+      const userNameValue = userName.value.trim();
       const emailValue = email.value.trim();
       const passwordValue = password.value.trim();
       const password2Value = password2.value.trim();
-      if (usernameValue === "") {
-        setErrorFor(username, "請輸入暱稱");
+      if (userNameValue === "") {
+        setErrorFor(userName, "請輸入暱稱");
       } else {
-        setSuccessFor(username);
+        setSuccessFor(userName);
       }
       if (emailValue === "") {
         setErrorFor(email, "請輸入Email");

@@ -3,31 +3,48 @@
     <h2 class="text-center m-2">登入會員</h2>
     <form id="form" class="form">
       <div class="form-control">
-        <label for="username">Email</label>
-        <input type="email" placeholder="JohnCena@gmail.com" id="email" />
+        <label for="email">Email</label>
+        <input type="email" placeholder="JohnCena@gmail.com" id="email"  v-model="email" name="email"/>
         <i class="fas fa-check-circle"></i>
         <i class="fas fa-exclamation-circle"></i>
         <small>Error message</small>
       </div>
       <div class="form-control">
-        <label for="username">密碼</label>
-        <input type="password" placeholder="Password" id="password" />
+        <label for="password">密碼</label>
+        <input type="password" placeholder="Password" id="password" v-model="password" name="password"/>
         <i class="fas fa-check-circle"></i>
         <i class="fas fa-exclamation-circle"></i>
         <small>Error message</small>
       </div>
-      <button>Log in</button>
+      <button
+      @click="login"
+      >Log in</button>
     </form>
   </div>
 </template>
 
 <script>
 import LoginPage from "@/views/loginPage.vue";
+import authenticationService from '../services/authenticationService';
+
 export default {
   data() {
-    return {};
+   return {
+      email: "",
+      password:"",
+
+    };
   },
-  methods: {},
+  methods: {
+    async login(){
+      const response = await authenticationService.login({
+        userName: this.userName,
+        email: this.email,
+        password: this.password,
+        });
+    }
+    
+  },
   computed: {},
   mounted() {
     const form = document.getElementById("form");
