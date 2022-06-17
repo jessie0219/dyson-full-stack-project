@@ -4,34 +4,34 @@
     <form id="form" class="form">
       <div class="form-control">
         <label for="userName">暱稱</label>
-        <input type="text" placeholder="John Cena" id="userName" v-model="userName" name="userName"/>
+        <input type="text" placeholder="John Cena" id="userName" v-model="userName"/>
         <i class="fas fa-check-circle"></i>
         <i class="fas fa-exclamation-circle"></i>
         <small>Error message</small>
       </div>
       <div class="form-control">
         <label for="email">Email</label>
-        <input type="email" placeholder="JohnCena@gmail.com" id="email" v-model="email" name="email"/>
+        <input type="email" placeholder="JohnCena@gmail.com" id="email" v-model="email"/>
         <i class="fas fa-check-circle"></i>
         <i class="fas fa-exclamation-circle"></i>
         <small>Error message</small>
       </div>
       <div class="form-control">
         <label for="password">密碼</label>
-        <input type="password" placeholder="Password" id="password" v-model="password" name="password"/>
+        <input type="password" placeholder="Password" id="password" v-model="password"/>
         <i class="fas fa-check-circle"></i>
         <i class="fas fa-exclamation-circle"></i>
         <small>Error message</small>
       </div>
       <div class="form-control">
         <label for="userName">再次輸入密碼</label>
-        <input type="password" placeholder="Password check" id="password2" />
+        <input type="password" placeholder="Password check" id="password2" name="rePassword" required/>
         <i class="fas fa-check-circle"></i>
         <i class="fas fa-exclamation-circle"></i>
         <small>Error message</small>
       </div>
       <button
-      @click="register"
+      @click="register "
       >Sign up</button>
     </form>
   </div>
@@ -56,7 +56,18 @@ export default {
         email: this.email,
         password: this.password
       });
-      console.log(response.data)
+
+      sessionStorage.setItem("user-info", JSON.stringify(response));
+            if (response.data.message=="good") {
+          alert("註冊成功")
+          this.$router.push("/");
+        } else if(response.data.message=="no"){
+         alert('此Email已註冊過囉!')
+      } else if(response.data.message=="error"){
+         alert('請填寫所有欄位!')
+
+      }
+      
     }
   },
   computed: {},

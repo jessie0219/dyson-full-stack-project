@@ -4,15 +4,13 @@
     <form id="form" class="form">
       <div class="form-control">
         <label for="email">Email</label>
-        <input type="email" placeholder="JohnCena@gmail.com" id="email"  v-model="email" name="email"/>
-        <i class="fas fa-check-circle"></i>
+        <input type="email" placeholder="JohnCena@gmail.com" id="email"  v-model="email"/>
         <i class="fas fa-exclamation-circle"></i>
         <small>Error message</small>
       </div>
       <div class="form-control">
         <label for="password">密碼</label>
-        <input type="password" placeholder="Password" id="password" v-model="password" name="password"/>
-        <i class="fas fa-check-circle"></i>
+        <input type="password" placeholder="Password" id="password" v-model="password"/>
         <i class="fas fa-exclamation-circle"></i>
         <small>Error message</small>
       </div>
@@ -26,6 +24,7 @@
 <script>
 import LoginPage from "@/views/loginPage.vue";
 import authenticationService from '../services/authenticationService';
+import { createStore } from "vuex";
 
 export default {
   data() {
@@ -37,14 +36,27 @@ export default {
   },
   methods: {
     async login(){
-      const response = await authenticationService.login({
+      const response = await authenticationService.login( {
         userName: this.userName,
         email: this.email,
         password: this.password,
-        });
+        },);
+
+        sessionStorage.setItem("user-info", JSON.stringify(response));
+
+        if (response.data.message=="good") {
+          alert("登入成功")
+          this.$router.push("/");
+        } else if(response.data.message=="error"){
+         alert('此帳號不存在')
+      }else if(response.data.message=="no"){
+         alert('輸入的帳號或密碼有誤')
+       
     }
+    }
+     },
     
-  },
+    
   computed: {},
   mounted() {
     const form = document.getElementById("form");
