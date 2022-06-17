@@ -128,9 +128,9 @@
       <div class="row">
       
         <producthair 
-    v-for="product in products" :key="product.Id" :product="product"
+    v-for="HairC in HairCs" :key="HairC.Id" :HairC="HairC"
     />
-        
+        {{Producthair}}
       </div>
     </div>
   </section>
@@ -147,12 +147,12 @@ export default {
   setup(){
         const store = useStore()
         onMounted(() => {
-            store.dispatch('fetchData')
+            store.dispatch('HairC')
         })
-        const products = computed(() => store.state.products)
+        const HairCs = computed(() => store.state.HairC)
 
         
-        return {products}
+        return {HairCs}
     },
   };
 </script>
