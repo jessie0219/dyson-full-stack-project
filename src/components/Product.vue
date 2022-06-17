@@ -1,6 +1,6 @@
 <template>
   <div class="col-12 col-sm-5 col-md-4 d-flex align-content-stretch g-5">
-    <div class="card" v-if="product.Id<16">
+    <div class="card">
       <img :src="product.imgUrl" :alt="`image-${product.Name}`" class="card-img-top">
       <div class="card-body">
         
@@ -9,7 +9,7 @@
         </p>
         
         
-        
+           
 
       </div>
       <div class="d-flex justify-content-around">

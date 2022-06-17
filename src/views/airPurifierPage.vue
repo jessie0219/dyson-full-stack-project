@@ -114,7 +114,7 @@
       <div class="row">
       
         <productair 
-    v-for="product in products" :key="product.Id" :product="product"
+    v-for="AirT in AirTs" :key="AirT.Id" :AirT="AirT"
     />
         
       </div>
@@ -133,12 +133,12 @@ export default {
   setup(){
         const store = useStore()
         onMounted(() => {
-            store.dispatch('fetchData')
+            store.dispatch('AirT')
         })
-        const products = computed(() => store.state.products)
+        const AirTs = computed(() => store.state.AirT)
 
         
-        return {products}
+        return {AirTs}
     },
   };
 </script>

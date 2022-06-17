@@ -7,7 +7,9 @@ export default createStore({
     cart: {},
     list: {},
     token: null,
-    users: null
+    users: null,
+    AirT:[],
+    HairC:[]
   },
   getters: {
     totalQuantity(state) {
@@ -20,6 +22,12 @@ export default createStore({
   mutations: {
     setProduct(state, payload) {
       state.products = payload
+    },
+    setAirT(state, payload){
+      state.AirT = payload
+    },
+    setHairC(state, payload){
+      state.HairC = payload
     },
     setCart(state, payload) {
       state.cart[payload.Id] = payload
@@ -52,10 +60,30 @@ export default createStore({
   actions: {
     async fetchData({ commit }) {
       try {
-        const res = await fetch('http://localhost:5000/api/products')
+        const res = await fetch('http://localhost:5000/api/vacuumcleaners')
         const data = await res.json()
         commit('setProduct', data)
       } catch (error) {
+        console.log(error);
+
+      }
+    },
+    async AirT({ commit }) {
+      try {
+        const res = await fetch('http://localhost:5000/api/airtreatments')
+        const data = await res.json()
+        commit('setAirT', data)
+      } catch (error) {
+console.log(error);
+      }
+    },
+    async HairC({ commit }) {
+      try {
+        const res = await fetch('http://localhost:5000/api/haircares')
+        const data = await res.json()
+        commit('setHairC', data)
+      } catch (error) {
+        console.log(error);
 
       }
     },
@@ -65,14 +93,18 @@ export default createStore({
         : product.quantity = 1
       commit('setCart', product)
     },
-    addToList({ commit, state }, product) {
-      if (!state.list.hasOwnProperty(product.Id)) {
-        product.quantity = 1
-      }
-
-      commit('setList', product)
+    addToCart2({ commit, state }, AirT) {
+      state.cart.hasOwnProperty(AirT.Id)
+        ? AirT.quantity = state.cart[AirT.Id].quantity + 1
+        : AirT.quantity = 1
+      commit('setCart', AirT)
     },
-
+    addToCart3({ commit, state }, HairC) {
+      state.cart.hasOwnProperty(HairC.Id)
+        ? HairC.quantity = state.cart[HairC.Id].quantity + 1
+        : HairC.quantity = 1
+      commit('setCart', HairC)
+    },
     setToken({ commit }, token) {
       commit('setToken', token)
     },
