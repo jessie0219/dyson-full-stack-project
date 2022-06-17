@@ -53,17 +53,36 @@
               >
             </li>
           </ul>
-          <form class="d-flex">
-            <a class="m-3" @click="openQuestion"
-              ><i class="fa-regular fa-circle-question"></i
-            ></a>
-            <router-link class="m-3" to="/login" @click="tabChange(Home)"
-              ><i class="fa-solid fa-user-large"></i
+           
+              <router-link to="/member">
+
+              <i class="fa-solid fa-person-shelter"
+             
+              >
+              </i>
+              </router-link>
+
+            <a href="" class="m-3"
+            
+            >
+              <i class="fa-solid fa-arrow-right-from-bracket"
+              @click="logOut(login)"
+             ></i>
+            </a>
+             <router-link class="m-3" to="/login" @click="tabChange(Home)"
+              ><i class="fa-solid fa-user-large"
+            
+              ></i
             ></router-link>
-            <router-link class="m-3" to="/cart" @click="tabChange(Home)"
+          <form class="d-flex">
+             <router-link class="m-3" to="/cart" @click="tabChange(Home)"
               ><i class="fa-solid fa-cart-shopping"></i
             ></router-link>
+            <a class="m-3" @click="openQuestion"
+              ><i class="fa-regular fa-circle-question"></i
+            ></a>         
           </form>
+
         </div>
       </div>
     </nav>
@@ -101,10 +120,22 @@ export default {
         // icon: "question",
       });
     },
+    
     tabChange(tabItem) {
       this.changePageBtn = tabItem;
     },
-  },
+    logOut(){
+      sessionStorage.removeItem("user-info")
+      alert("已登出");
+      if(sessionStorage.getItem>1){
+        alert(hi)
+      }
+      
+    },
+  
+   
+   
+    },
   mounted() {
     var nav = document.querySelector("nav");
     window.addEventListener("scroll", function () {
@@ -114,6 +145,11 @@ export default {
         nav.classList.remove("bg-dark", "shadow");
       }
     });
+   
+    let user = sessionStorage.getItem('user-token')
+    console.log(user-token)
+    this.user = user ? user : '未登入'
+    this.notLogin = user ? false : true
   },
 };
 </script>

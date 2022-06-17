@@ -5,6 +5,7 @@ import LoginPage from '../views/loginPage.vue'
 import CartPage from '../views/CartPage.vue'
 import AirpurifierPage from '../views/airPurifierPage.vue'
 import VacuumCleanerPage from '../views/VacuumCleanerPage.vue'
+import memberPage from '../views/memberPage.vue'
 
 const routes = [
   {
@@ -21,6 +22,11 @@ const routes = [
     path: '/login',
     name: 'login',
     component: LoginPage
+  },
+  {
+    path: '/member',
+    name: 'member',
+    component: memberPage
   },
   {
     path: '/cart',
