@@ -12,8 +12,11 @@
     "jquery": "^3.6.0",
     "mysql": "^2.18.1",
     "vue": "^3.2.13",
+    "vue-class-component": "^8.0.0-0",
     "vue-router": "^4.0.3",
     "vue-sweetalert2": "^5.0.5",
+    "vue3-tabs": "^0.1.13-beta.3",
+    "vue3-tabs-component": "^1.0.8",
     "vuex": "^4.0.0"
   },
   "devDependencies": {
@@ -22,6 +25,7 @@
     "@vue/cli-plugin-vuex": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "less": "^4.0.0",
-    "less-loader": "^8.0.0"
+    "less-loader": "^8.0.0",
+    "vue-cli-plugin-element-plus": "~0.0.13"
   }
 }

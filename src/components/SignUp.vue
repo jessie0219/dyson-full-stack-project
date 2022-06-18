@@ -59,7 +59,7 @@ export default {
 
       sessionStorage.setItem("user-info", JSON.stringify(response));
             if (response.data.message=="good") {
-          alert("註冊成功")
+          alert("註冊成功，記得再登入一次")
           this.$router.push("/");
         } else if(response.data.message=="no"){
          alert('此Email已註冊過囉!')
