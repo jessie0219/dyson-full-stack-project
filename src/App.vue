@@ -14,6 +14,7 @@ export default {
     Footer,
     Cart,
   },
+  
 };
 </script>
 
