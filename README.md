@@ -18,3 +18,4 @@ npm run build
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 "# dyson-full-stack-project" 
+"# final-dyson-full-stack-project" 
